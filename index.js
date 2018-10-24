@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var gpio = require('rpi-gpio');
+var axios = require('axios');
 
 gpio.setup(7, gpio.DIR_OUT);
 
@@ -38,6 +39,23 @@ gpio.write(7, false, function(err) {
     });
 
 });
+
+app.post('/led/nodeOn', function(req, res){
+
+axios.post('http://192.168.0.9/LED=ON');
+
+});
+
+app.post('/led/nodeOFF', function(req, res){
+
+axios.post('http://192.168.0.9/LED=OFF');
+
+});
+
+
+
+
+
 
 
 app.listen(3000, function () {

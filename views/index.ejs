@@ -1,21 +1,29 @@
 <meta name="viewport" content="width=500, initial-scale=1"> <!--This line of code is for mobile responsive -->
 
 <div class="BorderMargin">
-  <image src = '/images/LED.png' alt="LED" style="width:180px;height:180px;">
+  <image src = '/images/home.png' alt="LED" style="width:30vw;height:20vw;">
 
-  <form action="/led/on" method="post">
+  <form class="form" action="/led/on" method="post">
     <button type="submit" class="button">LED On </button>
       <button type="submit" formmethod="post" formaction="/led/off" class="button button3">LED Off</button>
-  </form>
+   </form>
+ <form action="/led/on" method="post">
+       <button type="submit" formmethod="post" formaction="/led/nodeOn" class="button button4">LAMP ON</button>
+   	<button type="submit" formmethod="post" formaction="/led/nodeOff" class="button button5">LAMP OFF</button>
+   </form>
 
-  <a>Led Status: <%=status %></a>
+
+  <!-- <a>Led Status: <%=status %></a> -->
 </div>
 
- <image src = '/images/nodejs-logo.png' alt="NodeJS" style="width:180px;height:180px;  float: left;">
-  <image src = '/images/rpi-logo.png' alt="NodeJS" style="width:140px;height:180px;  float: left;">
 
 <!-- The below code is only for look and styling -->
 <style>
+
+.form {
+   margin-top: 10px;	 
+	}
+
 .button {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -27,7 +35,15 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 5px;	
+    transition: transform .3s;	
+    
 }
+
+.button:hover{
+         
+	transform:scale(1.1);
+	}
 
 .button2 {background-color: #008CBA;} /* Blue */
 .button3 {background-color: #f44336;} /* Red */ 
@@ -39,8 +55,12 @@
   
    margin: 10px;
    padding: 10px;
-   max-width: 300px;
-   height: 300px;
-   border: 1px solid black;
+   width: 100%;
+   display: flex;
+   justify-content:center;
+   align-items: center;		
+   flex-direction: column; 
+   	
+	 
 }   
 </style>
