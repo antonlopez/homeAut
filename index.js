@@ -43,14 +43,42 @@ gpio.write(7, false, function(err) {
 app.post('/led/nodeOn', function(req, res){
 
 axios.post('http://192.168.0.9/LED=ON');
+res.end('It worked!');
 
 });
 
 app.post('/led/nodeOFF', function(req, res){
 
 axios.post('http://192.168.0.9/LED=OFF');
+res.end('It worked!');
 
 });
+
+
+
+app.post('/tvON', function(req, res){
+
+axios.post('http://10.3.141.191/ir?code=551489775');
+
+res.end('ok');
+
+});
+
+app.post('/volumeUp', function(req, res){
+
+axios.post('http://10.3.141.191/ir?code=551489775');
+res.end('It worked!');
+
+});
+
+
+app.post('/volumeDown', function(req, res){
+
+axios.post('http://10.3.141.191/ir?code=551489775');
+res.end('It worked!');
+
+});
+
 
 
 
